@@ -1,0 +1,4 @@
+C:\Users\grc28\Desktop\SDLProject\Debug\SDLProject.exe
+C:\Users\grc28\Desktop\SDLProject\Debug\SDLProject.pdb
+C:\Users\grc28\Documents\CSUY3113\Class Notes\Triangle\SDLProject\Debug\SDLProject.exe
+C:\Users\grc28\Documents\CSUY3113\Class Notes\Triangle\SDLProject\Debug\SDLProject.pdb
