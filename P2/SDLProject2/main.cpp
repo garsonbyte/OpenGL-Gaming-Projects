@@ -57,9 +57,9 @@ glm::vec3 left_wall = glm::vec3(-5.0, 0, 0);
 glm::vec3 right_wall = glm::vec3(5.0, -0, 0);
 
 
-float ball_speed = 6.5f; // Speed of ball 
+float ball_speed = 8.5f; // Speed of ball 
 float MAX_BOUNCE_ANGLE = 60.0f;
-float paddle_speed = 5.5f; // Speed of paddle
+float paddle_speed = 7.5f; // Speed of paddle
 
 // Ticks
 float lastTicks = 0.0f;
