@@ -1,17 +1,17 @@
 ﻿  main.cpp
-C:\Users\grc28\Documents\CSUY3113\P2\SDLProject2\main.cpp(82,26): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\grc28\Documents\CSUY3113\P2\SDLProject2\main.cpp(87,26): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\grc28\Documents\CSUY3113\P2\SDLProject2\main.cpp(83,40): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\grc28\Documents\CSUY3113\P2\SDLProject2\main.cpp(88,40): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\grc28\Documents\CSUY3113\P2\SDLProject2\main.cpp(228,109): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\grc28\Documents\CSUY3113\P2\SDLProject2\main.cpp(241,107): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\grc28\Documents\CSUY3113\P2\SDLProject2\main.cpp(258,23): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\grc28\Documents\CSUY3113\P2\SDLProject2\main.cpp(244,109): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\grc28\Documents\CSUY3113\P2\SDLProject2\main.cpp(257,107): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\grc28\Documents\CSUY3113\P2\SDLProject2\main.cpp(274,23): warning C4305: '+=': truncation from 'double' to 'float'
   ShaderProgram.cpp
   Generating Code...
   SDLProject.vcxproj -> C:\Users\grc28\Documents\CSUY3113\P2\SDLProject2\Debug\SDLProject.exe

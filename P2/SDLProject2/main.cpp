@@ -8,6 +8,7 @@
 #define PI 3.14159265
 #include <SDL.h>
 #include <SDL_opengl.h>
+#include <SDL_mixer.h>
 #include "glm/mat4x4.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 #include "ShaderProgram.h"
@@ -64,6 +65,10 @@ float paddle_speed = 7.5f; // Speed of paddle
 // Ticks
 float lastTicks = 0.0f;
 
+// Music Variables
+Mix_Music* music;
+Mix_Chunk* bounce;
+
 // Box - Box Collision Detection
 bool collision(glm::vec3& a, glm::vec3& b, float w1, float w2, float h1, float h2) {
     float xdist = fabs(a.x - b.x) - ((w1 + w2) / 2.0f);
@@ -96,7 +101,7 @@ void startAgain() {
 
 void Initialize() {
     SDL_Renderer* renderer = NULL;
-    SDL_Init(SDL_INIT_VIDEO);
+    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
     displayWindow = SDL_CreateWindow("Pong", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_OPENGL);
     SDL_GLContext context = SDL_GL_CreateContext(displayWindow);
     SDL_GL_MakeCurrent(displayWindow, context);
@@ -108,6 +113,14 @@ void Initialize() {
     glViewport(0, 0, 640, 480); // Tell camera is draw from (0,0) to (640,480)
 
     program.Load("shaders/vertex.glsl", "shaders/fragment.glsl");
+
+    // Start Audio
+    Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096);
+    music = Mix_LoadMUS("dooblydoo.mp3");
+    Mix_PlayMusic(music, -1);
+    Mix_VolumeMusic(MIX_MAX_VOLUME / 4);
+
+    bounce = Mix_LoadWAV("bounce.wav");
 
     // Initialize indentity matrices and projection matrix
     viewMatrix = glm::mat4(1.0f);
@@ -200,16 +213,19 @@ void Update() {
 
     // When ball collides with paddle1
     if (collision(ball_position, paddle1_position, ball_w, paddle_w, ball_h, paddle_h)) {
+        Mix_PlayChannel(-1, bounce, 0);
         paddleBounce(ball_position, paddle1_position, ball_movement);
     }
 
     // When ball collides with paddle2
     if (collision(ball_position, paddle2_position, ball_w, paddle_w, ball_h, paddle_h)) {
+        Mix_PlayChannel(-1, bounce, 0);
         paddleBounce(ball_position, paddle2_position, ball_movement);
     }
 
     // When ball collides with wall, reflects away from the wall with the same angle (negate y)
     if (collision(ball_position, top_wall, ball_w, bwall_w, ball_h, bwall_h) || collision(ball_position, bot_wall, ball_w, bwall_w, ball_h, bwall_h)) {
+        Mix_PlayChannel(-1, bounce, 0);
         ball_movement.y = -ball_movement.y;
     }
 
