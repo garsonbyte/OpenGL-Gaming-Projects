@@ -1,0 +1,9 @@
+﻿  Entity.cpp
+C:\Users\grc28\Documents\CSUY3113\P4\SDLProject4\Entity.cpp(267,107): warning C4305: 'initializing': truncation from 'double' to 'float'
+  main.cpp
+C:\Users\grc28\Documents\CSUY3113\P4\SDLProject4\main.cpp(83,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\grc28\Documents\CSUY3113\P4\SDLProject4\main.cpp(210,43): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\grc28\Documents\CSUY3113\P4\SDLProject4\main.cpp(211,44): warning C4305: '=': truncation from 'double' to 'float'
+  ShaderProgram.cpp
+  Generating Code...
+  SDLProject.vcxproj -> C:\Users\grc28\Documents\CSUY3113\P4\SDLProject4\Debug\SDLProject.exe

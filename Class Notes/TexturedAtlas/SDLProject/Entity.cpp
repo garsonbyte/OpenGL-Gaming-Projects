@@ -69,7 +69,43 @@ void Entity::CheckCollisionsX(Entity* objects, int objectCount)
     }
 }
 
-void Entity::Update(float deltaTime, Entity *platforms, int platformCount)
+void Entity::AIWalker() {
+    movement = glm::vec3(-1, 0, 0);
+}
+
+void Entity::AIWaitAndGo(Entity *player) {
+    switch (aiState) {
+    case IDLE:
+        if (glm::distance(position, player->position) < 3.0f) {
+            aiState = WALKING;
+        }
+        break;
+    case WALKING:
+        if (player->position.x < position.x) {
+            movement = glm::vec3(-1, 0, 0);
+        }
+        else {
+            movement = glm::vec3(1, 0, 0);
+        }
+        break;
+    case ATTACKING:
+        break;
+    }
+}
+
+void Entity::AI(Entity* player) {
+    switch (aiType) {
+    case WALKER:
+        AIWalker();
+        break;
+    
+    case WAITANDGO:
+        AIWaitAndGo(player);
+        break;
+    }
+}
+
+void Entity::Update(float deltaTime, Entity *player, Entity *platforms, int platformCount)
 {
     if (isActive == false) return;
 
@@ -77,6 +113,10 @@ void Entity::Update(float deltaTime, Entity *platforms, int platformCount)
     collidedBottom = false;
     collidedLeft = false;
     collidedRight = false;
+
+    if (entityType == ENEMY) {
+        AI(player);
+    }
 
     if (animIndices != NULL) {
         if (glm::length(movement) != 0) {

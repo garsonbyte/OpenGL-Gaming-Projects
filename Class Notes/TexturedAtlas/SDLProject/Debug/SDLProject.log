@@ -1,6 +1,2 @@
 ﻿  Entity.cpp
-  main.cpp
-C:\Users\grc28\Documents\CSUY3113\Class Notes\TexturedAtlas\SDLProject\main.cpp(68,23): warning C4018: '<': signed/unsigned mismatch
-  ShaderProgram.cpp
-  Generating Code...
   SDLProject.vcxproj -> C:\Users\grc28\Documents\CSUY3113\Class Notes\TexturedAtlas\SDLProject\Debug\SDLProject.exe
